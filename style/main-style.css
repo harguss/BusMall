@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 150px;
+  color: rgb(26, 26, 104);
+}
+
+
+img {
+  /* display: flex;  */
+  /* justify-content:space-between; */
+  /* flex-direction: row; */
+ float: right;  
+  height: 350px;
+  padding-right: 50px; 
+  
+}
