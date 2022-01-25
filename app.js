@@ -1,3 +1,6 @@
+'use strict';
+
+console.log('app.jsconnected');
 //global Varibles
 
 
@@ -8,7 +11,6 @@
 const ProductPicture = function(name, imageSrc){
   this.name = name;
   this.imageSrc = imageSrc;
-  this.clicks = clicks;
   this.clicks = 0;
   this.timesShone = 0;
   ProductPicture.allImages.push(this);
