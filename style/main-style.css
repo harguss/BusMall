@@ -1,19 +1,32 @@
 * {
   box-sizing: border-box;
 }
+body {
+  font-family: 'Chakra Petch', sans-serif;
+  color: rgb(26, 26, 104);
+  background-color: rgb(191, 215, 215);
+}
 
 h1 {
+  text-align: center;
   font-size: 150px;
-  color: rgb(26, 26, 104);
+  
+  padding-bottom: 20px;
+}
+h2 {
+  text-align: center;
+  font-size: 50px;
+  padding-bottom: 40px; 
 }
 
 
-img {
-  /* display: flex;  */
-  /* justify-content:space-between; */
-  /* flex-direction: row; */
- float: right;  
-  height: 350px;
-  padding-right: 50px; 
+#images {
+  display: flex;  
+  justify-content: space-evenly;
+  /* height: 550px; */
+  /* padding-right: 50px;  */
   
+}
+img {
+  height: 450px;
 }
