@@ -20,7 +20,7 @@ h2 {
 }
 
 
-#images {
+#all_images {
   display: flex;  
   justify-content: space-evenly;
   /* height: 550px; */
