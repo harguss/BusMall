@@ -7,9 +7,12 @@ let productImageTagSection = document.getElementById('all_images');
 
 let firstProductImageTag = document.getElementById('first_product_image');
 let secondProductImageTag = document.getElementById('second_product_image');
+let thirdProductImageTag = document.getElementById('third_product_image');
+console.log(thirdProductImageTag);
 
 let firstProductOnThePage = null;
 let secondProductOnThePage = null;
+let thirdProductOnThePage = null;
 
 let totalClicks = 0;
 
@@ -33,6 +36,7 @@ const renderNewProduct = function(firstIndex, secondIndex){
   console.log(ProductPicture.allImages[secondIndex].url);
   firstProductImageTag.src = ProductPicture.allImages[firstIndex].url;
   secondProductImageTag.src = ProductPicture.allImages[secondIndex].url;
+  // thirdProductImageTag.src = ProductPicture.allImages[thirdIndex].url;
 };
 
 
@@ -50,6 +54,7 @@ const pickNewProduct = function(){
   //set to a variable
   firstProductOnThePage = ProductPicture.allImages[firstIndex];
   secondProductOnThePage = ProductPicture.allImages[secondIndex];
+  // thirdProductOnThePage = ProductPicture.allImages[thirdIndex];
 
   renderNewProduct(firstIndex, secondIndex);
 
@@ -87,8 +92,12 @@ const handleClickOnProduct = function(event){
       if(id === 'second_product_image'){
         secondProductOnThePage.clicks++;
       }
+      if(id === 'third_product_image'){
+        thirdProductOnThePage.clicks++;
+      }
       firstProductOnThePage.timesShone++;
       secondProductOnThePage.timesShone++;
+      thirdProductOnThePage.timesShone++;
 
       pickNewProduct();
     }
@@ -136,6 +145,7 @@ new ProductPicture('wine-glass', 'assets/wine-glass.jpg');
 
 firstProductOnThePage = ProductPicture.allImages[0];
 secondProductOnThePage = ProductPicture.allImages[1];
+thirdProductOnThePage = ProductPicture.allImages[2];
 
 
 pickNewProduct();
