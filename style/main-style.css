@@ -20,12 +20,13 @@ nav {
   height:150px;
   width: 450px;
   border: none;
+  margin-top: 30px;
 }
 
 h1 {
   text-align: center;
   font-size: 150px;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
 }
 h2 {
   text-align: center;
