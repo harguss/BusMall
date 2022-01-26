@@ -31,12 +31,13 @@ ProductPicture.allImages = [];
 
 // console.log(ProductPicture.allImages);
 
-const renderNewProduct = function(firstIndex, secondIndex){
+const renderNewProduct = function(firstIndex, secondIndex, thirdIndex){
   console.log(ProductPicture.allImages[firstIndex].url);
   console.log(ProductPicture.allImages[secondIndex].url);
+  console.log(ProductPicture.allImages[thirdIndex].url);
   firstProductImageTag.src = ProductPicture.allImages[firstIndex].url;
   secondProductImageTag.src = ProductPicture.allImages[secondIndex].url;
-  // thirdProductImageTag.src = ProductPicture.allImages[thirdIndex].url;
+  thirdProductImageTag.src = ProductPicture.allImages[thirdIndex].url;
 };
 
 
@@ -51,12 +52,18 @@ const pickNewProduct = function(){
   } while(secondIndex === firstIndex);
   console.log(ProductPicture.allImages[firstIndex].name + ' and ' + ProductPicture.allImages[secondIndex].name);
 
+  let thirdIndex;
+  do {
+    thirdIndex = Math.floor(Math.random() * ProductPicture.allImages.length);
+  }while(thirdIndex === secondIndex);
+  console.log(ProductPicture.allImages[secondIndex].name + ' and ' + ProductPicture.allImages[thirdIndex].name);
+
   //set to a variable
   firstProductOnThePage = ProductPicture.allImages[firstIndex];
   secondProductOnThePage = ProductPicture.allImages[secondIndex];
-  // thirdProductOnThePage = ProductPicture.allImages[thirdIndex];
+  thirdProductOnThePage = ProductPicture.allImages[thirdIndex];
 
-  renderNewProduct(firstIndex, secondIndex);
+  renderNewProduct(firstIndex, secondIndex , thirdIndex);
 
 };
 
@@ -78,7 +85,7 @@ const pickNewProduct = function(){
 
 const handleClickOnProduct = function(event){
   console.log('clicking on the picture', event.target);
-  if(totalClicks < 5){
+  if(totalClicks < 25){
     const thingWeClickedOn = event.target;
     // console.log('why', thingWeClickedOn.id);
     const id = thingWeClickedOn.id;
@@ -108,7 +115,7 @@ const handleClickOnProduct = function(event){
 
   totalClicks++;
   console.log(totalClicks);
-  if (totalClicks === 5){
+  if (totalClicks === 25){
     productImageTagSection.removeEventListener('click', handleClickOnProduct);
   }
 };
