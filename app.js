@@ -19,8 +19,10 @@ let secondProductImage = document.getElementById('second_product_image');
 let thirdProductImage = document.getElementById('third_product_image');
 
 
-// let chartResults = document.getElementById('chartResults');
-// let resultsList = document.getElementById('resultsList');
+
+let chartResults = document.getElementById('chartResults');
+let resultsList = document.getElementById('resultsList');
+
 
 
 
@@ -42,31 +44,31 @@ const ProductPicture = function(name, imageSrc){
 // console.log(allImages);
 
 const renderNewProduct = function(firstIndex, secondIndex, thirdIndex){
-  console.log(allProducts[firstIndex].imageSrc);
-  console.log(allProducts[secondIndex].imageSrc);
-  console.log(allProducts[thirdIndex].imageSrc);
+  // console.log(allProducts[firstIndex].imageSrc);
+  // console.log(allProducts[secondIndex].imageSrc);
+  // console.log(allProducts[thirdIndex].imageSrc);
   firstProductImage.src = allProducts[firstIndex].imageSrc;
   secondProductImage.src = allProducts[secondIndex].imageSrc;
   thirdProductImage.src = allProducts[thirdIndex].imageSrc;
 };
 
 
-//add function for getting a new object from array based on the index number we get back from random generator.
+
 const pickNewProduct = function(){
   const firstIndex = Math.floor(Math.random() * allProducts.length);
-  console.log('first index for the first image', firstIndex);
+  // console.log('first index for the first image', firstIndex);
 
   let secondIndex;
   do {
     secondIndex = Math.floor(Math.random() * allProducts.length);
   } while(secondIndex === firstIndex);
-  console.log(allProducts[firstIndex].name + ' and ' + allProducts[secondIndex].name);
+  // console.log(allProducts[firstIndex].name + ' and ' + allProducts[secondIndex].name);
 
   let thirdIndex;
   do {
     thirdIndex = Math.floor(Math.random() * allProducts.length);
   }while(thirdIndex === secondIndex);
-  console.log(allProducts[secondIndex].name + ' and ' + allProducts[thirdIndex].name);
+  // console.log(allProducts[secondIndex].name + ' and ' + allProducts[thirdIndex].name);
 
   //set to a variable
   firstProductOnThePage = allProducts[firstIndex];
@@ -109,44 +111,86 @@ function handleClickOnProduct(event){
   }
 
 
+
+
   totalClicks++;
   console.log(totalClicks);
   if (totalClicks === 25){
-    makeAProductChart();
+    // makeAProductChart();
     productImageSectionTag.removeEventListener('click', handleClickOnProduct);
   }
 }
 
-productImageSectionTag.addEventListener('click', handleClickOnProduct);
 
-///////
+
+function handleResultsList(){
+  document.getElementById('product-clicks').style.background = '#8197c9';
+  document.getElementById('product-clicks').style.color = 'whitesmoke';
+
+  let ul = document.getElementById('product-clicks');
+  ul.innerHTML ='';
+  for(let i = 0; i < allProducts.length; i++){
+    let current = allProducts[i];
+    let li = document.createElement('li');
+    li.textContent = current.name + ' got ' + current.clicks + ' votes';
+    ul.appendChild(li);
+  }
+}
+
+function handleChartResults(){
+  // console.log(allProducts);
+  makeAProductChart();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+productImageSectionTag.addEventListener('click', handleClickOnProduct);
+resultsList.addEventListener('click', handleResultsList);
+chartResults.addEventListener('click', handleChartResults);
+
+
 function makeAProductChart(){
+  console.log(allProducts);
 
   const productNamesArray = [];
   const productClicksArray = [];
+
   for(let i = 0; i< allProducts.length; i++){
     const singleProductName = allProducts[i].name;
     productNamesArray.push(singleProductName);
   }
   for(let i = 0; i< allProducts.length; i++){
+    // console.log(allProducts[i].clicks);
     const singleProductClicks = allProducts[i].clicks;
     productClicksArray.push(singleProductClicks);
   }
 
 
-  ////////////CHART
+  //   ////////////CHART
 
-
-
+  console.log(document.getElementById('myChart'));
   const ctx = document.getElementById('myChart').getContext('2d');
-
+  console.log(ctx);
   new Chart(ctx, {
     type: 'bar',
     data: {
       labels: productNamesArray,
       datasets: [{
         label: 'Product Clicks',
-        data: ['productClicksArray'],
+        data: [1,2,3,1,2,3,1,2,3],
+        // data: productClicksArray,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
