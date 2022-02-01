@@ -42,7 +42,7 @@ h2 {
 }
 .hr2 {
   height: 10px;
-  background: rgb(37, 37, 144);
+  background: #252590;
   margin-bottom: 35px;
   margin-right: 75px;
 }
@@ -56,22 +56,30 @@ h2 {
   /* margin-right: clear; */
    /* padding-top: 40px;  */
 } 
-
-.result-button {
-  font-family: 'Orbitron', sans-serif;
-  color: rgb(37, 37, 144);
-  width: 200px;
-  border: 8px solid rgb(37, 37, 144);
-  margin-bottom: 20px;
+.buttons { 
+  margin-bottom: 150px;
+  display: flex;
+  justify-content: space-around
 }
-  
 .submit-button {
   font-family: 'Orbitron', sans-serif;
+  size: 20px;
   color: rgb(37, 37, 144);
-  width: 200px;
+  width: 100px;
   border: 8px solid rgb(37, 37, 144);
   margin-top: 10px;
 }
+  
+.result-button {
+  font-family: 'Orbitron', sans-serif;
+  size: 20px;
+  color: rgb(37, 37, 144);
+  width: 100px;
+  border: 8px solid rgb(37, 37, 144);
+  margin-top: 10px;
+}
+    
+    
 
 #all_images {
   display: flex;  
