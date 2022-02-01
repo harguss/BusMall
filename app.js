@@ -4,6 +4,7 @@ console.log('app.jsconnected');
 
 let totalClicks = 0;
 const allProducts = [];
+let preImgSeen = [];
 
 let firstProductOnThePage;
 let secondProductOnThePage;
@@ -16,34 +17,71 @@ let chartResults = document.getElementById('chartResults');
 let resultsList = document.getElementById('resultsList');
 
 
-const ProductPicture = function(name, imageSrc){
+const ProductPicture = function(name, imageSrc, clicks, timesShone){
   this.name = name;
   this.imageSrc = imageSrc;
-  this.clicks = 0;
-  this.timesShone = 0;
+  //add if statement or click updating
+  if(clicks){
+    this.clicks = clicks;
+  } else {
+    this.clicks = 0;
+  }
+  if(timesShone){
+    this.timesShown = timesShone;
+  } else {
+    this.timesShown = 0;
+  }
   allProducts.push(this);
 };
-//create product objects
-new ProductPicture('boots', 'assets/boots.jpg'); //0
-new ProductPicture('bag', 'assets/bag.jpg'); // 1
-new ProductPicture('banana', 'assets/banana.jpg'); //2
-new ProductPicture('bathroom', 'assets/bathroom.jpg');
-new ProductPicture('breakfast', 'assets/breakfast.jpg');
-new ProductPicture('bubblegum', 'assets/bubblegum.jpg');
-new ProductPicture('chair', 'assets/chair.jpg');
-new ProductPicture('cthulhu', 'assets/cthulhu.jpg');
-new ProductPicture('dog-duck', 'assets/dog-duck.jpg');
-new ProductPicture('dragon', 'assets/dragon.jpg');
-new ProductPicture('pen', 'assets/pen.jpg');
-new ProductPicture('pet-sweep', 'assets/pet-sweep.jpg');
-new ProductPicture('scissors', 'assets/scissors.jpg');
-new ProductPicture('shark', 'assets/shark.jpg');
-new ProductPicture('sweep', 'assets/sweep.jpg');
-new ProductPicture('tauntaun', 'assets/tauntaun.jpg');
-new ProductPicture('unicorn', 'assets/unicorn.jpg');
-new ProductPicture('water-can', 'assets/water-can.jpg');
-new ProductPicture('wine-glass', 'assets/wine-glass.jpg');
 
+this.clicks = 0;
+this.timesShone = 0;
+allProducts.push(this);
+
+
+
+let savedProductString = localStorage.getItem('savedProducts');
+if(savedProductString){
+  console.log('this is the objects in string form ', savedProductString);
+
+  //parse string into objects
+  let arrayOfNotProductObject = JSON.parse(savedProductString);
+  console.log('if condition what is our type ',arrayOfNotProductObject);
+  //once we have object we are going to run them through our constructor function so that they are Pizza objects.
+
+  //use a for loop to run objects through our constructor function
+  for(let j = 0; j < arrayOfNotProductObject.length; j++){
+    new ProductPicture(
+      arrayOfNotProductObject[j].name,
+      arrayOfNotProductObject[j].imageSrc,
+      arrayOfNotProductObject[j].timesClicked,
+      arrayOfNotProductObject[j].timesShown
+    );
+  }
+  //use a for loop to run objects through our constructor function
+} else {
+
+  //create product objects
+  new ProductPicture('boots', 'assets/boots.jpg'); //0
+  new ProductPicture('bag', 'assets/bag.jpg'); // 1
+  new ProductPicture('banana', 'assets/banana.jpg'); //2
+  new ProductPicture('bathroom', 'assets/bathroom.jpg');
+  new ProductPicture('breakfast', 'assets/breakfast.jpg');
+  new ProductPicture('bubblegum', 'assets/bubblegum.jpg');
+  new ProductPicture('chair', 'assets/chair.jpg');
+  new ProductPicture('cthulhu', 'assets/cthulhu.jpg');
+  new ProductPicture('dog-duck', 'assets/dog-duck.jpg');
+  new ProductPicture('dragon', 'assets/dragon.jpg');
+  new ProductPicture('pen', 'assets/pen.jpg');
+  new ProductPicture('pet-sweep', 'assets/pet-sweep.jpg');
+  new ProductPicture('scissors', 'assets/scissors.jpg');
+  new ProductPicture('shark', 'assets/shark.jpg');
+  new ProductPicture('sweep', 'assets/sweep.jpg');
+  new ProductPicture('tauntaun', 'assets/tauntaun.jpg');
+  new ProductPicture('unicorn', 'assets/unicorn.jpg');
+  new ProductPicture('water-can', 'assets/water-can.jpg');
+  new ProductPicture('wine-glass', 'assets/wine-glass.jpg');
+}
 firstProductOnThePage = allProducts[0];
 secondProductOnThePage = allProducts[1];
 thirdProductOnThePage = allProducts[2];
@@ -81,16 +119,16 @@ function handleClickOnProduct(event){
   let secondIndex;
   do {
     secondIndex = Math.floor(Math.random() * allProducts.length);
-  } while(currentImgs.includes(allProducts[firstIndex]) ||
-  preImgSeen.includes(allProducts[firstIndex])
+  } while(currentImgs.includes(allProducts[secondIndex]) ||
+  preImgSeen.includes(allProducts[secondIndex])
   );
   currentImgs.push(allProducts[secondIndex]);
 
   let thirdIndex;
   do {
     thirdIndex = Math.floor(Math.random() * allProducts.length);
-  }while(currentImgs.includes(allProducts[firstIndex]) ||
-  preImgSeen.includes(allProducts[firstIndex])
+  }while(currentImgs.includes(allProducts[thirdIndex]) ||
+  preImgSeen.includes(allProducts[thirdIndex])
   );
   currentImgs.push(allProducts[thirdIndex]);
 
@@ -104,7 +142,7 @@ function handleClickOnProduct(event){
   secondProductImage.src = allProducts[secondIndex].imageSrc;
   thirdProductImage.src = allProducts[thirdIndex].imageSrc;
 
-  let preImgSeen = [];
+  preImgSeen = [];
   preImgSeen.push(allProducts[firstIndex]);
   preImgSeen.push(allProducts[secondIndex]);
   preImgSeen.push(allProducts[thirdIndex]);
@@ -114,6 +152,7 @@ function handleClickOnProduct(event){
   if(totalClicks === 25){
     // makeAProductChart();
     productImageSectionTag.removeEventListener('click', handleClickOnProduct);
+    localStorage.setItem('savedProducts', JSON.stringify(allProducts));
   }
 }
 
@@ -218,5 +257,5 @@ function makeAProductChart(){
 
 
 
-pickNewProduct();
+
 
