@@ -1,51 +1,64 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="style/reset.css">
-    <link rel="stylesheet" href="style/grid.css">
-    <link rel="stylesheet" href="style/main-style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Kanit:wght@700&family=Orbitron:wght@500;900&family=Oswald:wght@600&family=Source+Sans+Pro:wght@200&family=Yellowtail&display=swap" rel="stylesheet">
-    
-    
-  </head>
-
-  <body>
-    <nav>
-      <h1>BusMall</h1>
-      <a><img src="assets/BusMall Logo.png" alt="logo" id="Logo"></a>
-    </nav> 
-    <hr> 
-    <main>
-    <section id="all_images">
-      <ul>
-        <li><img src="assets/boots.jpg" alt="boots" id="first_product_image"></li>
-      </ul>
-      <ul>
-        <li><img src="assets/bag.jpg" alt="bag" id="second_product_image"></li>
-      </ul>
-      <ul>
-        <li><img src="assets/banana.jpg" alt="watercan" id="third_product_image"></li>
-      </ul>
-    </section>
-
-    <h2>Vote for the Best Product</h2>
-    <div class="myChart">
-      <canvas id="myChart"></canvas>
-    </div>
-
-
-
-    </main>
-    
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="app.js" async defer></script>
-  </body>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="style/reset.css">
+      <link rel="stylesheet" href="style/grid.css">
+      <link rel="stylesheet" href="style/main-style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Kanit:wght@700&family=Orbitron:wght@500;900&family=Oswald:wght@600&family=Source+Sans+Pro:wght@200&family=Yellowtail&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <nav>
+         <h1>BusMall</h1>
+         <a><img src="assets/BusMall Logo.png" alt="logo" id="Logo"></a>
+      </nav>
+      <div class= "hr1"><hr></div>
+      <div class= "hr2"><hr></div>
+      
+      <main>
+         <h2>Vote for the Best Product</h2>
+         <div class="grid-container">
+            <div class= "item three-images">
+                <section id="all_images">
+                  <ul>
+                     <li><img src="assets/boots.jpg" alt="boots" id="first_product_image"></li>
+                  </ul>
+                  <ul>
+                     <li><img src="assets/bag.jpg" alt="bag" id="second_product_image"></li>
+                  </ul>
+                  <ul>
+                     <li><img src="assets/banana.jpg" alt="watercan" id="third_product_image"></li>
+                  </ul>
+                </section>
+              </div>
+              <div class= "item tabulator">
+                  <section id="Vote-Tabulator">
+                     <p class="counter">Votes Left: <span id="votes-counter">25</span></p>
+                  </section>
+                  <ul id="product-clicks"></ul> 
+              </div>
+           
+            <div class="item chart">
+               <div class="myChart">
+                  <canvas id="myChart"></canvas>
+               </div>
+            </div>
+            <div class="item buttons">
+            <div class="submit-button">
+               <button  type="submit" id="resultsList">Click to See Results List</button>
+            </div>
+            <div class="result-button">
+               <button  type="submit" id="chartResults">Click to See Chart Results</button>
+            </div>
+          </div>
+         </div>
+      </main>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="app.js" async defer></script>
+   </body>
 </html>
