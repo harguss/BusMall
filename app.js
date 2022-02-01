@@ -4,6 +4,7 @@ console.log('app.jsconnected');
 
 let totalClicks = 0;
 const allProducts = [];
+let preImgSeen = [];
 
 let firstProductOnThePage;
 let secondProductOnThePage;
@@ -81,16 +82,16 @@ function handleClickOnProduct(event){
   let secondIndex;
   do {
     secondIndex = Math.floor(Math.random() * allProducts.length);
-  } while(currentImgs.includes(allProducts[firstIndex]) ||
-  preImgSeen.includes(allProducts[firstIndex])
+  } while(currentImgs.includes(allProducts[secondIndex]) ||
+  preImgSeen.includes(allProducts[secondIndex])
   );
   currentImgs.push(allProducts[secondIndex]);
 
   let thirdIndex;
   do {
     thirdIndex = Math.floor(Math.random() * allProducts.length);
-  }while(currentImgs.includes(allProducts[firstIndex]) ||
-  preImgSeen.includes(allProducts[firstIndex])
+  }while(currentImgs.includes(allProducts[thirdIndex]) ||
+  preImgSeen.includes(allProducts[thirdIndex])
   );
   currentImgs.push(allProducts[thirdIndex]);
 
@@ -104,7 +105,7 @@ function handleClickOnProduct(event){
   secondProductImage.src = allProducts[secondIndex].imageSrc;
   thirdProductImage.src = allProducts[thirdIndex].imageSrc;
 
-  let preImgSeen = [];
+  preImgSeen = [];
   preImgSeen.push(allProducts[firstIndex]);
   preImgSeen.push(allProducts[secondIndex]);
   preImgSeen.push(allProducts[thirdIndex]);
@@ -218,5 +219,5 @@ function makeAProductChart(){
 
 
 
-pickNewProduct();
+
 
