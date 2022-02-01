@@ -115,6 +115,7 @@ function handleClickOnProduct(event){
   if(totalClicks === 25){
     // makeAProductChart();
     productImageSectionTag.removeEventListener('click', handleClickOnProduct);
+    localStorage.setItem('savedProducts', JSON.stringify(allProducts));
   }
 }
 
