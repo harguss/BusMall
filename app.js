@@ -3,6 +3,7 @@
 console.log('app.jsconnected');
 
 let totalClicks = 0;
+// let liCounter = document.getElementById('votes-counter');
 const allProducts = [];
 let preImgSeen = [];
 
@@ -17,7 +18,7 @@ let chartResults = document.getElementById('chartResults');
 let resultsList = document.getElementById('resultsList');
 
 
-const ProductPicture = function(name, imageSrc, clicks, timesShone){
+const ProductPicture = function(name, imageSrc, clicks, timesShown){
   this.name = name;
   this.imageSrc = imageSrc;
   //add if statement or click updating
@@ -26,17 +27,17 @@ const ProductPicture = function(name, imageSrc, clicks, timesShone){
   } else {
     this.clicks = 0;
   }
-  if(timesShone){
-    this.timesShown = timesShone;
+  if(timesShown){
+    this.timesShown = timesShown;
   } else {
     this.timesShown = 0;
   }
   allProducts.push(this);
-};
+};//closes  constructor
 
-this.clicks = 0;
-this.timesShone = 0;
-allProducts.push(this);
+// this.clicks = 0;
+// this.timesShown = 0;
+// allProducts.push(this);
 
 
 
@@ -51,6 +52,7 @@ if(savedProductString){
 
   //use a for loop to run objects through our constructor function
   for(let j = 0; j < arrayOfNotProductObject.length; j++){
+    console.log(arrayOfNotProductObject[j].timesShown);
     new ProductPicture(
       arrayOfNotProductObject[j].name,
       arrayOfNotProductObject[j].imageSrc,
@@ -58,7 +60,7 @@ if(savedProductString){
       arrayOfNotProductObject[j].timesShown
     );
   }
-  //use a for loop to run objects through our constructor function
+
 } else {
 
   //create product objects
@@ -91,9 +93,13 @@ thirdProductOnThePage = allProducts[2];
 
 function handleClickOnProduct(event){
   totalClicks++;
-  firstProductOnThePage.timesShone++;
-  secondProductOnThePage.timesShone++;
-  thirdProductOnThePage.timesShone++;
+  firstProductOnThePage.timesShown++;
+  secondProductOnThePage.timesShown++;
+  thirdProductOnThePage.timesShown++;
+
+  // firstProductOnThePage.colorProp = 'blue';
+  // secondProductOnThePage.coloropPr = 'blue';
+  // thirdProductOnThePage.colorpppp = 'blue';
 
   if(event.target.id === 'first_product_image'){
     firstProductOnThePage.clicks++;
@@ -149,7 +155,7 @@ function handleClickOnProduct(event){
 
 
 
-  if(totalClicks === 25){
+  if(totalClicks === 5){
     // makeAProductChart();
     productImageSectionTag.removeEventListener('click', handleClickOnProduct);
     localStorage.setItem('savedProducts', JSON.stringify(allProducts));
@@ -253,8 +259,14 @@ function makeAProductChart(){
 
 }
 
+// let object = {
+//   // this.firstThing = firstThing;
+//   firstThing : 'first thing'
+// };
 
 
+// object.secondThing = 'second thing';
+// console.log(object);
 
 
 
