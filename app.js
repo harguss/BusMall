@@ -159,6 +159,8 @@ function handleClickOnProduct(event){
     // makeAProductChart();
     productImageSectionTag.removeEventListener('click', handleClickOnProduct);
     localStorage.setItem('savedProducts', JSON.stringify(allProducts));
+    handleResultsList();
+    makeAProductChart();
   }
 }
 
@@ -228,7 +230,6 @@ function makeAProductChart(){
       datasets: [{
         label: 'Product Clicks',
         data: productClicksArray,
-        // data: productClicksArray,
         backgroundColor: [
           'rgba(200, 7, 49, 1.2)',
           'rgba(54, 162, 235, 1.2)',
