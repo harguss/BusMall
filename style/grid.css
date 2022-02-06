@@ -1,9 +1,11 @@
 .grid-container {
   display: grid;
-  width:1600px;
+  width:1700px;
   margin: 0 auto;
   grid-template-columns: 20fr 50fr 30fr; 
-  grid-template-rows: 100px 350px 1fr; 
+  grid-template-rows: 130px 380px 1fr;
+  margin-right: 50px;
+  margin-left: 50px; 
 }
 
 
@@ -16,7 +18,7 @@
 
 
 .three-images {
-  grid-column-start: 2;
+  grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 2;
@@ -27,20 +29,14 @@
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  /* width: 300px; */
+  width: 300px;
+  margin-left: 30px;
 }
 
 .chart {
-  grid-column-start: 2;
+  grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 3;
-}
-.buttons {
-  grid-column-start: 3;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  
 }
 
