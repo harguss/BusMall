@@ -17,45 +17,41 @@
          <h1>BusMall</h1>
          <a><img src="assets/BusMall Logo.png" alt="logo" id="Logo"></a>
       </nav>
-      <div class= "hr1"><hr></div>
-      <div class= "hr2"><hr></div>
-      
+      <div class= "hr1">
+         <hr>
+      </div>
+      <div class= "hr2">
+         <hr>
+      </div>
       <main>
-         <h2>Vote for the Best Product</h2>
          <div class="grid-container">
+            <div class= "h2">
+               <h2>Vote for the Best Product</h2>
+            </div>
             <div class= "item three-images">
-                <section id="all_images">
+               <section id="all_images">
                   <ul>
-                     <li><img src="assets/boots.jpg" alt="boots" id="first_product_image"></li>
-                  </ul>
+                     <li><img class="red" src="assets/boots.jpg" alt="boots" id="first_product_image"></li>
+                  </ul> 
                   <ul>
-                     <li><img src="assets/bag.jpg" alt="bag" id="second_product_image"></li>
-                  </ul>
+                     <li><img class= "yellow" src="assets/bag.jpg" alt="bag" id="second_product_image"></li>
+                  </ul> 
                   <ul>
-                     <li><img src="assets/banana.jpg" alt="watercan" id="third_product_image"></li>
+                     <li><img class= "green" src="assets/banana.jpg" alt="watercan" id="third_product_image"></li>
                   </ul>
-                </section>
-              </div>
-              <div class= "item tabulator">
-                  <section id="Vote-Tabulator">
-                     <p class="counter">Votes Left: <span id="votes-counter">25</span></p>
-                  </section>
-                  <ul id="product-clicks"></ul> 
-              </div>
-           
+               </section>
+            </div>
+            <div class= "item tabulator">
+               <section id="Vote-Tabulator">
+                  <p class="counter">Votes Left: <span id="votes-counter">25</span></p>
+               </section>
+               <ul id="product-clicks"></ul>
+            </div>
             <div class="item chart">
                <div class="myChart">
                   <canvas id="myChart"></canvas>
                </div>
             </div>
-            <div class="item buttons">
-            <div class="submit-button">
-               <button  type="submit" id="resultsList">Click to See Results List</button>
-            </div>
-            <div class="result-button">
-               <button  type="submit" id="chartResults">Click to See Chart Results</button>
-            </div>
-          </div>
          </div>
       </main>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

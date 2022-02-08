@@ -2,19 +2,16 @@
   display: grid;
   width:1600px;
   margin: 0 auto;
-  grid-template-columns: 25fr 25fr 25fr 25fr;
-  grid-template-rows: 10fr 50fr 30fr 10fr; 
+  grid-template-columns: 20fr 50fr 30fr; 
+  grid-template-rows: 130px 380px 1fr;
+  /* margin-right: 50px;
+  margin-left: 50px;  */
 }
 
 
-/* .row-full {
-  margin-top: 15px;
-  grid-row-start: 1;
-  grid-row-end: 5;
-}  */
 .h2 {
-  grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 1;
 }
@@ -28,24 +25,16 @@
 }
 
 .tabulator {
-  grid-column-start: 4;
-  grid-column-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 3;
   grid-row-start: 2;
-  grid-row-end: 2;
-  width: 300px;
+  grid-row-end: 3;
 }
 
 .chart {
-  grid-column-start: 2;
-  grid-column-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 3;
-}
-.buttons {
-  grid-column-start: 4;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  
 }
 

@@ -1,22 +1,22 @@
-/* * {
+* {
   box-sizing: border-box;
-} */
+} 
 
 body {
-  
   font-family: 'Orbitron', sans-serif;
   color: rgb(37, 37, 144);
   background-color: rgb(191, 215, 215);
-  margin-top: 100px;
-  margin-right: 50px;
-  margin-left: 50px;
 }
 nav {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  margin-right: 45px;
+  margin-top: 40px;
 }
+
 #Logo {
+  float:left;
   height:150px;
   width: 450px;
   border: none;
@@ -25,15 +25,16 @@ nav {
 }
 
 h1 {
-  text-align: center;
   font-size: 150px;
-  padding-right: 100px; 
-}
-h2 {
-  font-size: 60px;
-  margin-top: 50px;
+  }
 
+.h2 {
+  display: flex;
+  flex-direction: row;
+  font-size: 60px;
+  margin-left: 100px;
 }
+
 .hr1 {
   height: 10px;
   background: rgb(37, 37, 144);
@@ -48,58 +49,52 @@ h2 {
 }
 
 #Vote-Tabulator {
-  /* display: grid; */
+  
+  /* display: flex; */
+  /* justify-content: flex-end; */
   text-align: center;
   font-size: 50px;
+  border: 8px solid rgb(37, 37, 144);
+  width: 300;
+  /* margin-right: clear;  */
+}
+.tabulator {
+  display: clear;
   width: 300px;
-  border: 8px solid rgb(37, 37, 144);
-  /* margin-right: clear; */
-   /* padding-top: 40px;  */
-} 
-.buttons { 
-  margin-bottom: 150px;
-  display: flex;
-  justify-content: space-around
+  margin-left: 200px;
 }
-.submit-button {
-  font-family: 'Orbitron', sans-serif;
-  size: 20px;
-  color: rgb(37, 37, 144);
-  width: 100px;
-  border: 8px solid rgb(37, 37, 144);
-  margin-top: 10px;
+
+ul li img {
+border-radius: 50%;
 }
-  
-.result-button {
-  font-family: 'Orbitron', sans-serif;
-  size: 20px;
-  color: rgb(37, 37, 144);
-  width: 100px;
-  border: 8px solid rgb(37, 37, 144);
-  margin-top: 10px;
-}
-    
-    
 
 #all_images {
   display: flex;  
   justify-content: space-between;
-  margin-left: -300px;
+  /* margin-left: 100px; */
 }
+
 img {
   height: 350px;
   width: 350px;
-  margin-left: 50px;
-  /* border-width: 4px; */
-  border: 8px solid rgb(37, 37, 144);
+  /* margin-left: 50px; */
+  /* border: 8px solid rgb(37, 37, 144); */
 }
 
-.myChart {
-  height: 200px;
-  margin-top: -150px;
-  margin-right: -100px;
+.red {
+  border: 20px solid red;
 }
 
-/* .product {
-  border: 8px solid rgb(37, 37, 144);
-} */
+.yellow {
+  border: 20px solid yellow;
+}
+
+.green {
+  border: 20px solid green;
+}
+
+.chart {
+  width: 950px;
+  height: 250px;
+}
+
