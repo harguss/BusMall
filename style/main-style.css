@@ -12,6 +12,7 @@ nav {
   flex-direction: row-reverse;
   justify-content: space-between;
   margin-right: 45px;
+  margin-top: 40px;
 }
 
 #Logo {
@@ -31,6 +32,7 @@ h1 {
   display: flex;
   flex-direction: row;
   font-size: 60px;
+  margin-left: 100px;
 }
 
 .hr1 {
@@ -59,22 +61,40 @@ h1 {
 .tabulator {
   display: clear;
   width: 300px;
+  margin-left: 200px;
+}
+
+ul li img {
+border-radius: 50%;
 }
 
 #all_images {
   display: flex;  
   justify-content: space-between;
+  /* margin-left: 100px; */
 }
 
 img {
   height: 350px;
   width: 350px;
   /* margin-left: 50px; */
-  border: 8px solid rgb(37, 37, 144);
+  /* border: 8px solid rgb(37, 37, 144); */
+}
+
+.red {
+  border: 20px solid red;
+}
+
+.yellow {
+  border: 20px solid yellow;
+}
+
+.green {
+  border: 20px solid green;
 }
 
 .chart {
   width: 950px;
-  height: 400px;
+  height: 250px;
 }
 

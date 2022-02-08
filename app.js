@@ -167,7 +167,7 @@ function handleClickOnProduct(event){
 
 
 function handleResultsList(){
-  document.getElementById('product-clicks').style.background = '#8197c9';
+  document.getElementById('product-clicks').style.background = '#90cfcf';
   document.getElementById('product-clicks').style.color = 'whitesmoke';
 
   let ul = document.getElementById('product-clicks');
