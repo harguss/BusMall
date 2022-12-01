@@ -48,7 +48,7 @@ if(savedProductString){
   //parse string into objects
   let arrayOfNotProductObject = JSON.parse(savedProductString);
   console.log('if condition what is our type ',arrayOfNotProductObject);
-  //once we have object we are going to run them through our constructor function so that they are Pizza objects.
+  //once we have object we are going to run them through our constructor function so that they are Product objects.
 
   //use a for loop to run objects through our constructor function
   for(let j = 0; j < arrayOfNotProductObject.length; j++){

@@ -5,8 +5,9 @@
 body {
   font-family: 'Orbitron', sans-serif;
   color: rgb(37, 37, 144);
-  /* background-color: rgb(191, 215, 215); */
-  background-image: linear-gradient(rgb(178, 178, 220),white);
+   /* background-color: rgb(208, 246, 246);  */
+   background-image: linear-gradient(rgb(104, 129, 182), white); */
+  /* background-image: linear-gradient(red, yellow); */
 }
 nav {
   display: flex;
@@ -57,6 +58,7 @@ h1 {
   font-size: 50px;
   border: 8px solid rgb(37, 37, 144);
   width: 300;
+  
   /* margin-right: clear;  */
 }
 .tabulator {
@@ -111,5 +113,6 @@ img {
 .chart {
   width: 950px;
   height: 250px;
+  
 }
 
